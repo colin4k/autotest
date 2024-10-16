@@ -1,0 +1,11 @@
+# 接口文档所在目录的绝对路径
+docs_directory: "/Users/colin/workspace/autotest/interfaces"
+
+# OpenAI API 密钥
+openai_api_key: "sk-1111"
+
+# OpenAI API 基础 URL (如果需要自定义的话)
+openai_api_base: "https://api.siliconflow.cn/v1"
+
+# 指定使用的 OpenAI 模型名称
+model_name: "Qwen/Qwen2.5-Coder-7B-Instruct"
