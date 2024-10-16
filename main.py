@@ -38,9 +38,10 @@ for interface_file in interface_files:
     
     # 提取生成的Python代码
     test_script = response.choices[0].message.content
+    #print(test_script.strip())
     
     # 对生成的代码进行评审
-    review_prompt = f"请你作为一个Python专家对以下代码进行评审，确保这些内容满足自动化接口测试的要求，并可以直接作为Python来运行：\n\n{test_script}，返回内容请只包括可执行的 Python 代码，不要解释，也不要有任何注释，不要为代码块增加代码块修饰符。"
+    review_prompt = f"请你作为一个Python专家对以下代码进行评审，从代码执行效率、稳定性、测试准确性等方面给出经评审优化的代码，确保满足自动化接口测试的要求，并可以直接作为Python来运行：\n\n{test_script.strip()}，返回内容请只包括可执行的 Python 代码，不要解释，也不要有任何注释，不要为代码块增加代码块修饰符。"
     review_response = client.chat.completions.create(
         model=model_name,
         messages=[{"role": "user", "content": review_prompt}]
@@ -48,6 +49,7 @@ for interface_file in interface_files:
     
     # 获取评审后的代码
     reviewed_test_script = review_response.choices[0].message.content
+    #print(reviewed_test_script.strip())
     
     # 删除可能存在的代码块修饰符
     reviewed_test_script = reviewed_test_script.strip()
