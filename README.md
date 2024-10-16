@@ -14,6 +14,7 @@ pip install -r requirements.txt
 ## 配置
 ```bash
 cp config.yaml.example config.yaml
+cp interface.txt.example interface.txt
 vi config.yaml
 #配置自己在前面创建的API 密钥
 openai_api_key: "sk-xxxxxx"
