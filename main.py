@@ -16,9 +16,8 @@ client = OpenAI(
 )
 model_name = config['model_name']
 
-# 读取interface.txt文件
-with open('interface.txt', 'r') as f:
-    interface_files = f.read().splitlines()
+# 获取docs_dir目录下所有的.md文件
+interface_files = list(docs_dir.glob('*.md'))
 
 # 创建 interfaces-script 目录（如果不存在）
 script_dir = Path('interfaces-script')
@@ -27,7 +26,7 @@ script_dir.mkdir(exist_ok=True)
 # 循环处理每个接口文档
 for interface_file in interface_files:
     # 读取接口文档内容
-    with open(docs_dir / interface_file, 'r') as f:
+    with open(interface_file, 'r') as f:
         interface_content = f.read()
     
     # 调用OpenAI API生成测试脚本
