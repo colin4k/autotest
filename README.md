@@ -1,5 +1,5 @@
 # autotest
-Generate Auto Test Scripts by AI\
+Generate Auto Test Scripts by AI
 
 ## 准备
 访问`https://siliconflow.cn/zh-cn/`，注册账号后创建`API密钥`

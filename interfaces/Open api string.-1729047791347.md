@@ -5,7 +5,7 @@
 
 #### URL
 
-- 本地环境: `POST` http://172.16.70.107:7700/default/openApi/get2
+- 本地环境: `POST` http://172.16.70.107:7700/mock/default/openApi/get2
 
 
 描述：
