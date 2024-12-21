@@ -3,7 +3,7 @@ from openai import OpenAI
 from pathlib import Path
 
 # 读取配置文件
-with open('config.yaml', 'r') as f:
+with open('config.yaml', 'r', encoding='utf-8') as f:  # 明确指定使用 UTF-8 编码
     config = yaml.safe_load(f)
 
 # 设置接口文档目录路径
